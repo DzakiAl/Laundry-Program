@@ -301,7 +301,15 @@ public class ProgramLaundry {
         System.out.println("----------------------------------");
         for (int i = 0; i < d.jumlahItem.size(); i++) {
             if (d.jumlahItem.get(i) > 0) {
-                System.out.println(NAMA_ITEM.get(i) + " : Rp " + d.biayaItem.get(i));
+                double jumlah = d.jumlahItem.get(i);
+                double harga = HARGA.get(i);
+                double total = d.biayaItem.get(i);
+
+                System.out.println(
+                        NAMA_ITEM.get(i) + " : " +
+                                jumlah + " " + SATUAN.get(i) +
+                                " x " + harga +
+                                " = Rp " + total);
             }
         }
         System.out.println("----------------------------------");
@@ -310,6 +318,7 @@ public class ProgramLaundry {
         System.out.println("Setrika: Rp " + d.totalSetrika);
         System.out.println("Diskon: Rp " + d.diskon);
         System.out.println("Total: Rp " + d.totalBayar);
+
         if (!d.catatan.isEmpty()) {
             System.out.println("Catatan: " + d.catatan);
         }
